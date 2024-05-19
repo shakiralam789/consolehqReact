@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Prompt&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sedan+SC&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+     font-family: "Lato", sans-serif;
+}
+
+@layer components{
+     
+   .font-50{
+        @apply text-2xl md:text-3xl lg:text-4xl 2xl:text-[45px]
+   }
+   .font-40{
+        @apply text-xl md:text-2xl lg:text-3xl 2xl:text-[40px]
+   }
+   .font-30{
+        @apply text-[20px] md:text-[22px] lg:text-[28px] 2xl:text-[30px]
+   }
+   .font-28{
+        @apply text-lg md:text-xl lg:text-[18px] 2xl:text-[28px]
+   }
+   .font-24{
+        @apply text-sm md:text-[16px] lg:text-[16px] 2xl:text-[24px]
+   }
+   .font-22{
+        @apply text-[13px] lg:text-[15px] 2xl:text-[22px]
+   }
+   .font-20{
+        @apply text-sm md:text-base lg:text-sm 2xl:text-[20px]
+   }
+   .font-18{
+        @apply text-xs md:text-sm lg:text-[13px] 2xl:text-lg
+   }
+   .font-16{
+        @apply text-xs lg:text-[11px] 2xl:text-base
+   }
+   .font-10{
+        @apply text-[8px] lg:text-[9px] 2xl:text-[10px]
+   }
+   .default-search-input{
+     @apply h-[42px] 2xl:h-[55px] font-16 ml-4 2xl:ml-6 text-gray-dark placeholder:text-xs 2xl:placeholder:text-base w-full outline-none focus:ring-0 ring-0 border-none
+   }
+   .default-label{
+     @apply font-18 text-gray-dark mb-2.5 2xl:mb-4 capitalize inline-block
+   }
+   .default-input{
+     @apply h-[42px] 2xl:h-[55px] font-16 px-3 2xl:px-5 border border-gray-medium text-gray-dark placeholder:text-xs 2xl:placeholder:text-base w-full outline-none focus:ring-0 ring-0
+   }
+   .required-style{
+     @apply after:content-['*'] after:ml-0.5 after:text-red-500
+   }
+   .btn{
+    @apply px-4 2xl:px-8 py-[11px] 2xl:py-5 text-white font-medium font-20 duration-300
+   }
+   .btn-primary{
+     @apply bg-primary btn hover:bg-[#183c44]
+   }
+   .btn-white{
+     @apply bg-white border border-gray-light text-gray-dark btn hover:bg-[#f7f7f7]
+   }
+   .icon-size{
+     @apply size-[18px] 2xl:size-[24px]
+   }
+   .checkbox-size{
+     @apply size-[18px] 2xl:size-[25px]
+   }
+   .check-icon-size{
+     @apply size-2.5 2xl:size-4
+   }
+}
+
+@layer utilities{
+     .sidebar-box-shadow{
+          box-shadow: 0 0 15px #dfdfdf;
+     }
+}
+.custom-drop-shadow {
+    --tw-drop-shadow: drop-shadow(0 3px 2px rgb(0 0 0 / 0.03)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.04));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+
+/* table border manage start */
+.table-row-css{
+     @apply [&>*:first-child]:border-l [&>*:last-child]:border-r;
+}
+
+.table-row-css td{
+     position: relative;
+}
+
+.table-row-css td::after{
+     @apply bg-gray-200;
+     content: '';
+     position: absolute;
+     top: 0px;
+     transform: translateY(-1px);
+     left: -1px;
+     right: -1px;
+     height: 1px;
+}
+
+.table-row-css td::before{
+     @apply bg-gray-200;
+     content: '';
+     position: absolute;
+     bottom: 0px;
+     left: -1px;
+     right: -1px;
+     height: 1px;
+}
+
+.without-border .table-row-css td::after{
+     @apply bg-transparent;
+}
+.without-border .table-row-css td::before{
+     @apply bg-transparent;
+}
+
+.table-row-css:has(input:checked){
+     @apply [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-default-green *:bg-default-green/10
+}
+
+.table-row-css:has(input:checked) td::before{
+     @apply bg-default-green z-10
+}
+
+.table-row-css:has(input:checked) td::after{
+     @apply bg-default-green z-10
+}
+
+/* table border manage end */
+
+.dropdown-default-position {
+     position: absolute;
+     inset: 100% 0 auto auto !important;
+     z-index: 1000; /* Adjust z-index as needed */
+     transform: translate(0,0) !important;
+     margin-top: 6px !important;
+   }
+
+.dropdown-default-position-middle{
+     z-index: 1000; 
+}
+.dropdown-default-position-left{
+     position: absolute;
+     inset: 100% 0 auto !important;
+     z-index: 1000; /* Adjust z-index as needed */
+     transform: translate(0,0) !important;
+     margin-top: 6px !important;
+}
+
+
+/* Style the calendar icon (if applicable) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+     width: 20px;
+     height: 20px;
+   }
+
+.mobile-collapse{
+     @apply -translate-x-full
+}
