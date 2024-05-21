@@ -70,6 +70,13 @@ body{
    .check-icon-size{
      @apply size-2.5 2xl:size-4
    }
+
+   .list-with-icon{
+          @apply w-full text-left flex items-center space-x-2 2xl:space-x-3 p-2 2xl:p-3 border-b last:border-b-transparent font-18 duration-300 hover:border-secondary hover:text-secondary
+     }
+   .list{
+          @apply text-left w-full border-b last:border-b-transparent duration-300 hover:border-secondary capitalize block p-2 2xl:p-3 font-18 text-gray-light hover:text-secondary
+     }
 }
 
 @layer utilities{
@@ -163,3 +170,4 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .mobile-collapse{
      @apply -translate-x-full
 }
+
